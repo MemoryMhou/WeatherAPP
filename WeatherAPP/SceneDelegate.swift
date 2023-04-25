@@ -8,16 +8,30 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    // A UIWindow property that will hold the app's main window.
     var window: UIWindow?
 
-
+    // This method is called when the scene is about to connect to the system.
+    // It creates a new UIWindow, assigns a root view controller to it, and makes the window visible.
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        
+        // Ensure that the scene is a UIWindowScene.
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        // Create a new UIWindow with the scene and assign it to the window property.
+        window = UIWindow(windowScene: windowScene)
+        
+        // Set the root view controller of the window to a WeatherViewController instance.
+        window?.rootViewController = WeatherViewController()
+           
+        // Make the window key and visible.
+        window?.makeKeyAndVisible()
     }
+}
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -48,5 +62,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 

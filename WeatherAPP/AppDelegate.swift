@@ -8,14 +8,26 @@
 import UIKit
 
 @main
+// The @main attribute is used to designate the AppDelegate class as the entry point
+// for the app. This is required for iOS app development.
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    // This variable represents the app's window, which acts as the main container
+       // for all the app's content.
+    var window: UIWindow?
+    
+    
+    // This method is called when the app finishes launching. It is typically used
+    // to perform any necessary setup or configuration tasks.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        
+        // Here, we are simply returning a Boolean value of true to indicate that the
+        // app launched successfully.
         return true
     }
+}
+
 
     // MARK: UISceneSession Lifecycle
 
@@ -32,5 +44,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
+
 
